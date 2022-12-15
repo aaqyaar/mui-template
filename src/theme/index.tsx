@@ -13,7 +13,9 @@ import shape from './shape';
 import palette from './palette';
 import typography from './typography';
 import breakpoints from './breakpoints';
+// your custom overrides for mui components
 import componentsOverride from './overrides';
+//
 import shadows, { customShadows } from './shadows';
 
 export default function ThemeConfig({
