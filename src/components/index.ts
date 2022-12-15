@@ -10,3 +10,5 @@ export { default as RtlLayout } from './RtlLayout';
 export { default as ScrollToTop } from './ScrollToTop';
 export { default as SearchNotFound } from './SearchNotFound';
 export { default as ThemePrimaryColor } from './ThemePrimaryColor';
+export { default as MenuPopover } from './MenuPopover';
+export { default as BadgeStatus } from './BadgeStatus';

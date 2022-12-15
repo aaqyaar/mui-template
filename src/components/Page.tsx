@@ -4,7 +4,7 @@ import { forwardRef, useEffect, useCallback } from 'react';
 
 import { Box } from '@mui/material';
 
-import track from '../utils/analytics';
+import track from 'utils/analytics';
 
 const Page = forwardRef(
   (

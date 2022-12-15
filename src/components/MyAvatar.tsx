@@ -6,19 +6,22 @@ import { createAvatar } from '../utils';
 export default function MyAvatar({
   name,
   photoURL,
+  sx,
   ...other
 }: {
-  name: string;
-  photoURL: string;
+  name?: string;
+  photoURL?: string;
+  sx?: any;
 }) {
   return (
     <MAvatar
       src={photoURL}
       alt={name}
-      color={photoURL ? 'default' : createAvatar(name).color}
+      sx={sx}
+      color={photoURL ? 'default' : createAvatar(name as string).color}
       {...other}
     >
-      {createAvatar(name).name}
+      {createAvatar(name as string).name}
     </MAvatar>
   );
 }

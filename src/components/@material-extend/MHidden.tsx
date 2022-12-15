@@ -1,9 +1,8 @@
 import { useMediaQuery } from '@mui/material';
-import { ReactNode } from 'react';
 import { Theme } from '@mui/system';
 
 interface IMHiddenProps {
-  children: ReactNode;
+  children?: any;
   width:
     | 'xsDown'
     | 'smDown'

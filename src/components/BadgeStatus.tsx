@@ -73,13 +73,16 @@ const RootStyle = styled('span')(({ theme, ownerState }: IRootStyleProps) => {
 // ----------------------------------------------------------------------
 
 interface IBadgeStatusProps {
-  size: 'small' | 'medium' | 'large';
-  status: 'away' | 'busy' | 'unread' | 'online' | 'offline' | 'invisible';
+  sx: any;
+  other?: any;
+  size?: 'small' | 'medium' | 'large';
+  status?: 'away' | 'busy' | 'unread' | 'online' | 'offline' | 'invisible';
 }
 
 export default function BadgeStatus({
   size = 'medium',
   status = 'offline',
+  sx,
   ...other
 }: IBadgeStatusProps) {
   return <RootStyle ownerState={{ status, size }} {...other} />;

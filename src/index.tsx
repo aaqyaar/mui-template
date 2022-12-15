@@ -6,17 +6,23 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { SettingsProvider } from 'contexts/SettingsContext';
+import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <SettingsProvider>
-        <App />
-      </SettingsProvider>
-    </Provider>
+    <BrowserRouter>
+      <HelmetProvider>
+        <Provider store={store}>
+          <SettingsProvider>
+            <App />
+          </SettingsProvider>
+        </Provider>
+      </HelmetProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

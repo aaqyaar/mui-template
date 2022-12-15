@@ -65,6 +65,7 @@ export default function Label({
   color = 'default',
   variant = 'ghost',
   children,
+  sx,
   ...other
 }: {
   color:
@@ -76,11 +77,13 @@ export default function Label({
     | 'warning'
     | 'error';
   children: React.ReactNode;
-  variant: 'filled' | 'outlined' | 'ghost';
+  variant?: 'filled' | 'outlined' | 'ghost';
+  sx?: any;
+  other?: any;
 }) {
   const theme = useTheme();
   return (
-    <RootStyle theme={theme} ownerState={{ color, variant }} {...other}>
+    <RootStyle theme={theme} sx={sx} ownerState={{ color, variant }} {...other}>
       {children}
     </RootStyle>
   );

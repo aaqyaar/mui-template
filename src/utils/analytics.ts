@@ -1,16 +1,20 @@
 import { googleAnalyticsConfig } from 'config';
 
-// ----------------------------------------------------------------------
+// window and gtaq is not defined in the server side
+// so we need to check if it is defined before using it
 
 const setup = (...args: any) => {
   if (process.env.NODE_ENV !== 'production') {
     return;
   }
 
-  // if (!window.gtaq) {
-  //   return;
-  // }
-  // window.gtaq(...args);
+  if (typeof window !== 'undefined') {
+    // @ts-ignore
+    if (window.gtag) {
+      // @ts-ignore
+      window.gtag(...args);
+    }
+  }
 };
 
 const track = {

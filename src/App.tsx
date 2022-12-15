@@ -1,10 +1,14 @@
 import ThemeConfig from 'theme';
-import { Settings } from 'components';
+import { NotistackProvider, Settings } from 'components';
+import Router from 'routes';
 
 function App() {
   return (
     <ThemeConfig>
-      <Settings />
+      <NotistackProvider>
+        <Settings />
+        <Router />
+      </NotistackProvider>
     </ThemeConfig>
   );
 }

@@ -184,13 +184,16 @@ function NavItem({ item, isShow }: { isShow: boolean; item: any }) {
 export default function NavSection({
   navConfig,
   isShow = true,
+  sx,
   ...other
 }: {
-  isShow: boolean;
-  navConfig: [];
+  sx?: any;
+  isShow?: boolean;
+  navConfig: any[];
+  other?: any;
 }) {
   return (
-    <Box {...other}>
+    <Box sx={sx} {...other}>
       {navConfig.map((list) => {
         const { subheader, items } = list;
         const navs: [] = items;

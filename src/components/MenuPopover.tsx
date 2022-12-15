@@ -21,14 +21,21 @@ const ArrowStyle = styled('span')(({ theme }) => ({
 export default function MenuPopover({
   children,
   sx,
+  open,
+  onClose,
   ...other
 }: {
-  children: React.ReactNode;
-  sx: any;
+  children?: React.ReactNode;
+  sx?: any;
+  anchorEl: any;
+  open: boolean;
+  onClose?: () => void;
+  other?: any;
 }) {
   return (
     <Popover
-      open={false}
+      open={open}
+      onClick={onClose}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       PaperProps={{

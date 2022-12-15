@@ -5,11 +5,12 @@ import { useInView } from 'react-intersection-observer';
 import { Box } from '@mui/material';
 
 interface IMotionInViewProps {
-  children: ReactNode;
-  variants: any;
-  transition: any;
-  triggerOnce: boolean;
-  threshold: number | number[];
+  children?: ReactNode;
+  variants?: any;
+  transition?: any;
+  triggerOnce?: boolean;
+  sx?: any;
+  threshold?: number | number[];
 }
 
 export default function MotionInView({
@@ -17,6 +18,7 @@ export default function MotionInView({
   variants,
   transition,
   threshold,
+  sx,
   ...other
 }: IMotionInViewProps) {
   const controls = useAnimation();
@@ -38,6 +40,7 @@ export default function MotionInView({
       ref={ref}
       component={motion.div}
       initial={Object.keys(variants)[0]}
+      sx={sx}
       animate={controls}
       variants={variants}
       transition={transition}
