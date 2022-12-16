@@ -18,7 +18,7 @@ import {
 } from '@mui/material';
 // components
 
-import { NavSection, Scrollbar } from 'components';
+import { Logo, NavSection, Scrollbar } from 'components';
 
 import { MIconButton } from 'components/@material-extend';
 
@@ -199,11 +199,14 @@ export default function MenuMobile({
       >
         <Scrollbar>
           <Link component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
-            <img
-              src=""
-              alt="Logo"
-              style={{
-                margin: `3 ${PADDING}`,
+            <Logo
+              // width={70}
+              // height={70}
+              sx={{
+                mx: PADDING,
+                my: 3,
+                width: 120,
+                height: 120,
               }}
             />
           </Link>
