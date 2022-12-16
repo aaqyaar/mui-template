@@ -9,7 +9,8 @@ export const _userAbout = {
   position: 'UI Designer',
   follower: randomNumberRange(999, 99999),
   following: randomNumberRange(999, 99999),
-  quote: 'Tart I love sugar plum I love oat cake. Sweet roll caramels I love jujubes. Topping cake wafer..',
+  quote:
+    'Tart I love sugar plum I love oat cake. Sweet roll caramels I love jujubes. Topping cake wafer..',
   country: _mock.address.country(1),
   email: _mock.email(1),
   company: _mock.company(1),
@@ -96,7 +97,11 @@ export const _userCards = [...Array(24)].map((_, index) => ({
 
 export const _userPayment = [...Array(2)].map((_, index) => ({
   id: _mock.id(index),
-  cardNumber: ['**** **** **** 1234', '**** **** **** 5678', '**** **** **** 7878'][index],
+  cardNumber: [
+    '**** **** **** 1234',
+    '**** **** **** 5678',
+    '**** **** **** 7878',
+  ][index],
   cardType: ['master_card', 'visa', 'master_card'][index],
 }));
 

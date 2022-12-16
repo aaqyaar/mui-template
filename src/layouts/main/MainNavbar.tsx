@@ -82,7 +82,7 @@ export default function MainNavbar() {
             />
           </MHidden>
 
-          <Button variant="contained" target="_blank" href="tel:+252617485460">
+          <Button variant="contained" target="_blank" href="tel:+252684213637">
             Hadda Iibso
           </Button>
 
