@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 // material
-
 import { alpha, styled } from '@mui/material/styles';
 import {
   Box,
@@ -223,6 +222,7 @@ export default function DashboardSidebar({
                 backdropFilter: 'blur(6px)',
                 WebkitBackdropFilter: 'blur(6px)', // Fix on Mobile
                 boxShadow: (theme: any) => theme.customShadows.z20,
+
                 bgcolor: (theme) =>
                   alpha(theme.palette.background.default, 0.88),
               }),

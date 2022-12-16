@@ -5,7 +5,7 @@ import MainLayout from 'layouts/main';
 import DashboardLayout from 'layouts/dashboard';
 import LogoOnlyLayout from 'layouts/LogoOnlyLayout';
 
-import { GuestGuard, AuthGuard, RoleBasedGuard } from 'guards';
+import { AuthGuard, RoleBasedGuard } from 'guards';
 
 // components
 import LoadingScreen from 'components/LoadingScreen';
@@ -54,9 +54,12 @@ export default function Router() {
     //     { path: 'reset-password', element: <ResetPassword /> },
     //   ],
     // },
-
     {
       path: 'dashboard',
+      element: <Navigate to={`${PATH_ADMIN.directories.overview}`} replace />,
+    },
+    {
+      path: 'admin',
       element: (
         <AuthGuard>
           <RoleBasedGuard
@@ -72,8 +75,9 @@ export default function Router() {
             <Navigate to={`${PATH_ADMIN.directories.overview}`} replace />
           ),
         },
+
         // Directories
-        // { path: `${PATH_ADMIN.directories.overview}`, element: <GeneralApp /> },
+        { path: `${PATH_ADMIN.directories.overview}`, element: <GeneralApp /> },
       ],
     },
 
@@ -104,7 +108,7 @@ export default function Router() {
 // );
 
 // Dashboard
-// const GeneralApp = Loadable(lazy(() => import('pages/dashboard/GeneralApp')));
+const GeneralApp = Loadable(lazy(() => import('pages/dashboard/GeneralApp')));
 
 // Main
 const LandingPage = Loadable(lazy(() => import('pages/LandingPage')));

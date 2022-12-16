@@ -12,3 +12,5 @@ export { default as SearchNotFound } from './SearchNotFound';
 export { default as ThemePrimaryColor } from './ThemePrimaryColor';
 export { default as MenuPopover } from './MenuPopover';
 export { default as BadgeStatus } from './BadgeStatus';
+export { default as Iconify } from './Iconify';
+export { default as Image } from './Image';

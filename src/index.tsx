@@ -8,6 +8,7 @@ import './index.css';
 import { SettingsProvider } from 'contexts/SettingsContext';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { CollapseDrawerProvider } from 'contexts/CollapseDrawerContext';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -18,7 +19,9 @@ root.render(
       <HelmetProvider>
         <Provider store={store}>
           <SettingsProvider>
-            <App />
+            <CollapseDrawerProvider>
+              <App />
+            </CollapseDrawerProvider>
           </SettingsProvider>
         </Provider>
       </HelmetProvider>

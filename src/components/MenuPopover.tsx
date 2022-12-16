@@ -1,4 +1,4 @@
-import { Popover } from '@mui/material';
+import { MenuProps, Popover } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
 
 const ArrowStyle = styled('span')(({ theme }) => ({
@@ -31,7 +31,8 @@ export default function MenuPopover({
   open: boolean;
   onClose?: () => void;
   other?: any;
-}) {
+} & MenuProps &
+  any) {
   return (
     <Popover
       open={open}
