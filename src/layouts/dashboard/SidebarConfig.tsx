@@ -11,16 +11,10 @@ const getIconify = (name: any) => <Icon width={100} height={100} icon={name} />;
 
 const ICONS = {
   overview: getIconify(Icons.roundSpaceDashboard),
-  products: getIconify(Icons.roundShoppingCart),
-  categories: getIconify(Icons.roundCategory),
-  clients: getIconify(Icons.roundPeopleAlt),
-  invoices: getIconify(Icons.roundInventory2),
-  orders: getIconify(Icons.roundMessage),
-  coupon: getIconify(Icons.roundPercentage),
 
-  roundLocalOffer: getIconify(Icons.roundLocalOffer),
-  brands: getIconify(Icons.outlineAdsClick),
-  roles: getIconify(Icons.roundSecurity),
+  invoices: getIconify(Icons.roundInventory2),
+
+  settings: getIconify(Icons.settings2Fill),
   users: getIconify(Icons.roundSupervisedUserCircle),
 };
 
@@ -35,52 +29,27 @@ const sidebarConfig = [
         path: PATH_ADMIN.directories.overview,
         icon: ICONS.overview,
       },
-      {
-        title: 'Products',
-        path: PATH_ADMIN.directories.products,
-        icon: ICONS.products,
-      },
-      {
-        title: 'Categories',
-        path: PATH_ADMIN.directories.categories,
-        icon: ICONS.categories,
-      },
-      {
-        title: 'Clients',
-        path: PATH_ADMIN.directories.clients,
-        icon: ICONS.clients,
-      },
+      { title: 'Users', path: PATH_ADMIN.directories.users, icon: ICONS.users },
       {
         title: 'Invoices',
         path: PATH_ADMIN.directories.invoices,
         icon: ICONS.invoices,
       },
       {
-        title: 'Orders',
-        path: PATH_ADMIN.directories.orders,
-        icon: ICONS.orders,
+        title: 'Settings',
+        path: '/settings',
+        icon: ICONS.settings,
+        children: [
+          {
+            title: 'Config',
+            path: '/config',
+          },
+          {
+            title: 'Privileges',
+            path: '/privileges',
+          },
+        ],
       },
-      {
-        title: 'Special Offers',
-        path: PATH_ADMIN.directories.offers,
-        icon: ICONS.roundLocalOffer,
-      },
-      {
-        title: 'Brands',
-        path: PATH_ADMIN.directories.brands,
-        icon: ICONS.brands,
-      },
-      {
-        title: 'Coupon Codes',
-        path: PATH_ADMIN.directories.couponCode,
-        icon: ICONS.coupon,
-      },
-      {
-        title: 'Roles and Permissions',
-        path: PATH_ADMIN.directories.roles,
-        icon: ICONS.roles,
-      },
-      { title: 'Users', path: PATH_ADMIN.directories.users, icon: ICONS.users },
     ],
   },
 ];
