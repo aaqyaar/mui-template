@@ -16,7 +16,7 @@ import useCollapseDrawer from 'hooks/useCollapseDrawer';
 // routes
 import { PATH_ADMIN } from 'routes/paths';
 
-import { MyAvatar, Scrollbar, NavSection } from 'components';
+import { MyAvatar, Scrollbar, NavSection, Logo } from 'components';
 
 import { MHidden } from 'components/@material-extend';
 //
@@ -139,7 +139,13 @@ export default function DashboardSidebar({
           justifyContent="space-between"
         >
           <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
-            <img src="" alt="Logo" />
+            <Logo
+              sx={{
+                width: 100,
+                height: 100,
+              }}
+              single
+            />
           </Box>
 
           <MHidden width="lgDown">

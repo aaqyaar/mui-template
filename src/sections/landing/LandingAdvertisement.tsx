@@ -64,7 +64,7 @@ export default function LandingAdvertisement() {
               size="large"
               variant="contained"
               target="_blank"
-              href="https://silicon.so/contact-page/"
+              href="mailto:abdizamedmo@gmail.com"
               sx={{
                 whiteSpace: 'nowrap',
                 boxShadow: (theme: any) => theme.customShadows.z8,

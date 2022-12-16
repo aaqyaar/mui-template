@@ -6,7 +6,7 @@ import { Box, Button, AppBar, Toolbar, Container } from '@mui/material';
 import useOffSetTop from 'hooks/useOffSetTop';
 // components
 
-import { Label } from 'components';
+import { Label, Logo } from 'components';
 import { MHidden } from 'components/@material-extend';
 //
 import MenuDesktop from './MenuDesktop';
@@ -67,7 +67,13 @@ export default function MainNavbar() {
           }}
         >
           <RouterLink to="/">
-            <img src="" alt="Logo" />
+            <Logo
+              sx={{
+                width: 100,
+                height: 100,
+              }}
+              single
+            />
           </RouterLink>
           <Label color="info" sx={{ ml: 1 }}>
             v2.6.0

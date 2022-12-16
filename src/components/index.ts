@@ -14,3 +14,4 @@ export { default as MenuPopover } from './MenuPopover';
 export { default as BadgeStatus } from './BadgeStatus';
 export { default as Iconify } from './Iconify';
 export { default as Image } from './Image';
+export { default as Logo } from './Logo';

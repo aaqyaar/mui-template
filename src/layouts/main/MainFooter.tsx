@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 // routes
 import { PATH_PAGE } from '../../routes/paths';
+import { Logo } from 'components';
 //
 
 // ----------------------------------------------------------------------
@@ -73,7 +74,14 @@ export default function MainFooter() {
         >
           <Grid item xs={12} sx={{ mb: 3 }}>
             <ScrollLink to="move_top" spy smooth>
-              <img src="" alt="Logo" style={{ margin: '0 auto' }} />
+              <Logo
+                sx={{
+                  width: 50,
+                  height: 50,
+                  mx: 'auto',
+                }}
+                single
+              />
             </ScrollLink>
           </Grid>
           <Grid item xs={8} md={3}>
@@ -133,7 +141,7 @@ export default function MainFooter() {
             textAlign: { xs: 'center', md: 'left' },
           }}
         >
-          © 2021. All rights reserved
+          © {new Date().getFullYear()}. All rights reserved
         </Typography>
       </Container>
     </RootStyle>

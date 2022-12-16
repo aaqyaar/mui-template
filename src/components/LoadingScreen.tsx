@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 // material
 import { alpha, styled, useTheme } from '@mui/material/styles';
 import { Box, GlobalStyles } from '@mui/material';
+import Logo from './Logo';
 
 const RootStyle = styled('div')(({ theme }) => ({
   height: '100%',
@@ -81,10 +82,8 @@ export default function LoadingScreen({ ...other }) {
             repeat: Infinity,
           }}
         >
-          <img
-            src=""
-            alt="logo"
-            style={{
+          <Logo
+            sx={{
               width: 70,
               height: 70,
             }}

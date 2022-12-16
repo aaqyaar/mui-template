@@ -6,6 +6,7 @@ import { Box, Link, Container, Typography } from '@mui/material';
 
 import MainNavbar from './MainNavbar';
 import MainFooter from './MainFooter';
+import { Logo } from 'components';
 
 export default function MainLayout() {
   const { pathname } = useLocation();
@@ -31,19 +32,19 @@ export default function MainLayout() {
         >
           <Container maxWidth="lg">
             <ScrollLink to="move_top" spy smooth>
-              <img
-                src=""
-                alt="Logo"
-                style={{
+              <Logo
+                sx={{
                   cursor: 'pointer',
-                  margin: '0 auto',
-                  marginBottom: 1,
+                  mx: 'auto',
+
+                  width: 100,
+                  height: 100,
                 }}
               />
             </ScrollLink>
 
             <Typography variant="caption" component="p">
-              © All rights reserved
+              © {new Date().getFullYear()} All rights reserved
               <br /> made by &nbsp;
               <Link href="https://abdizamedmo.netlify.app/">Abdi Zamed</Link>
             </Typography>

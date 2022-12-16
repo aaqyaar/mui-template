@@ -20,7 +20,7 @@ const RootStyle = styled(Page)(({ theme }) => ({
 
 export default function Page404() {
   return (
-    <RootStyle title="404 Page Not Found | Minimal-UI">
+    <RootStyle title="404 Page Not Found | Abdi Zamed Mohamed">
       <Container>
         {/* @ts-ignore */}
         <MotionContainer initial="initial" open>
