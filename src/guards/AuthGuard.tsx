@@ -1,7 +1,6 @@
+import Login from 'pages/auth/Login';
 import { ReactNode, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-
-// import Login from '../pages/authentication/Login';
 
 export default function AuthGuard({ children }: { children: ReactNode }) {
   const { pathname }: any = useLocation();
@@ -11,7 +10,7 @@ export default function AuthGuard({ children }: { children: ReactNode }) {
     if (pathname !== requestedLocation) {
       setRequestedLocation(pathname);
     }
-    // return <Login />;
+    return <Login />;
   }
 
   if (requestedLocation && pathname !== requestedLocation) {

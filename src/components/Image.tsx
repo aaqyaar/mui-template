@@ -1,10 +1,14 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import React from 'react';
+import {
+  LazyLoadImage,
+  LazyLoadImageProps,
+} from 'react-lazy-load-image-component';
 // @mui
 import { Box } from '@mui/material';
 
-interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface IImageProps extends LazyLoadImageProps {
   disabledEffect?: boolean;
-  effect?: string;
+  // effect?: string;
   ratio?:
     | '4/3'
     | '3/4'
@@ -18,7 +22,6 @@ interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   sx?: { [key: string]: any };
   other?: any;
 }
-
 export default function Image({
   ratio,
   disabledEffect = false,

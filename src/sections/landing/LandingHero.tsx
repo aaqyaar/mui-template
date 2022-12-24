@@ -132,7 +132,7 @@ export default function LandingHero() {
               />
               <motion.img
                 variants={varFadeInRight}
-                src="/static/home/ic_js.svg"
+                src="/static/home/ic_ts.svg"
               />
             </Stack>
           </ContentStyle>

@@ -5,7 +5,7 @@ import MainLayout from 'layouts/main';
 import DashboardLayout from 'layouts/dashboard';
 import LogoOnlyLayout from 'layouts/LogoOnlyLayout';
 
-import { AuthGuard, RoleBasedGuard } from 'guards';
+import { AuthGuard, GuestGuard, RoleBasedGuard } from 'guards';
 
 // components
 import LoadingScreen from 'components/LoadingScreen';
@@ -40,20 +40,20 @@ const Loadable = (Component: React.FC) => (props: any) => {
 
 export default function Router() {
   return useRoutes([
-    // {
-    //   path: 'auth',
-    //   children: [
-    //     {
-    //       path: 'login',
-    //       element: (
-    //         <GuestGuard>
-    //           <Login />
-    //         </GuestGuard>
-    //       ),
-    //     },
-    //     { path: 'reset-password', element: <ResetPassword /> },
-    //   ],
-    // },
+    {
+      path: 'auth',
+      children: [
+        {
+          path: 'login',
+          element: (
+            <GuestGuard>
+              <Login />
+            </GuestGuard>
+          ),
+        },
+        // { path: 'reset-password', element: <ResetPassword /> },
+      ],
+    },
     {
       path: 'dashboard',
       element: <Navigate to={`${PATH_ADMIN.directories.overview}`} replace />,
@@ -102,7 +102,7 @@ export default function Router() {
 }
 
 // // Authentication
-// const Login = Loadable(lazy(() => import('pages/authentication/Login')));
+const Login = Loadable(lazy(() => import('pages/auth/Login')));
 // const ResetPassword = Loadable(
 //   lazy(() => import('pages/authentication/ResetPassword'))
 // );
