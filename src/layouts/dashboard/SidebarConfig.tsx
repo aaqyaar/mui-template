@@ -37,16 +37,16 @@ const sidebarConfig = [
       },
       {
         title: 'Settings',
-        path: '/settings',
+        path: PATH_ADMIN.directories.settings.root,
         icon: ICONS.settings,
         children: [
           {
-            title: 'Config',
-            path: '/config',
+            title: 'General',
+            path: PATH_ADMIN.directories.settings.general,
           },
           {
             title: 'Privileges',
-            path: '/privileges',
+            path: 'privileges',
           },
         ],
       },

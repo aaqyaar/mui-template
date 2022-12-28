@@ -10,6 +10,7 @@ import { AuthGuard, GuestGuard, RoleBasedGuard } from 'guards';
 // components
 import LoadingScreen from 'components/LoadingScreen';
 import { PATH_ADMIN } from './paths';
+
 // ----------------------------------------------------------------------
 
 const Loadable = (Component: React.FC) => (props: any) => {
@@ -78,6 +79,17 @@ export default function Router() {
 
         // Directories
         { path: `${PATH_ADMIN.directories.overview}`, element: <GeneralApp /> },
+
+        // settings
+        {
+          path: `${PATH_ADMIN.directories.settings.root}`,
+          children: [
+            {
+              path: `${PATH_ADMIN.directories.settings.general}`,
+              element: <GeneralSettings />,
+            },
+          ],
+        },
       ],
     },
 
@@ -109,7 +121,9 @@ const Login = Loadable(lazy(() => import('pages/auth/Login')));
 
 // Dashboard
 const GeneralApp = Loadable(lazy(() => import('pages/dashboard/GeneralApp')));
-
+const GeneralSettings = Loadable(
+  lazy(() => import('pages/dashboard/GeneralSettings'))
+);
 // Main
 const LandingPage = Loadable(lazy(() => import('pages/LandingPage')));
 const Maintenance = Loadable(lazy(() => import('pages/Maintenance')));

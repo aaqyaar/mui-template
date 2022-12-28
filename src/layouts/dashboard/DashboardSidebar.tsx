@@ -2,21 +2,10 @@ import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 // material
 import { alpha, styled } from '@mui/material/styles';
-import {
-  Box,
-  Link,
-  Stack,
-  Drawer,
-  Tooltip,
-  Typography,
-  CardActionArea,
-} from '@mui/material';
+import { Box, Stack, Drawer, Tooltip, CardActionArea } from '@mui/material';
 // hooks
 import useCollapseDrawer from 'hooks/useCollapseDrawer';
-// routes
-import { PATH_ADMIN } from 'routes/paths';
-
-import { MyAvatar, Scrollbar, NavSection, Logo } from 'components';
+import { Scrollbar, NavSection, Logo } from 'components';
 
 import { MHidden } from 'components/@material-extend';
 //
@@ -32,14 +21,6 @@ const RootStyle = styled('div')(({ theme }) => ({
       duration: theme.transitions.duration.complex,
     }),
   },
-}));
-
-const AccountStyle = styled('div')(({ theme }: any) => ({
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(2, 2.5),
-  borderRadius: theme.shape.borderRadiusSm,
-  backgroundColor: theme.palette.grey[500_12],
 }));
 
 function IconCollapse({
@@ -127,7 +108,6 @@ export default function DashboardSidebar({
         sx={{
           px: 2.5,
           pt: 3,
-          pb: 2,
           ...(isCollapse && {
             alignItems: 'center',
           }),
@@ -141,8 +121,8 @@ export default function DashboardSidebar({
           <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
             <Logo
               sx={{
-                width: 100,
-                height: 100,
+                width: 90,
+                height: 90,
               }}
               single
             />
@@ -157,28 +137,6 @@ export default function DashboardSidebar({
             )}
           </MHidden>
         </Stack>
-
-        {isCollapse ? (
-          <MyAvatar sx={{ mx: 'auto', mb: 2 }} />
-        ) : (
-          <Link
-            underline="none"
-            component={RouterLink}
-            to={`${PATH_ADMIN.profiles.userprofile}`}
-          >
-            <AccountStyle>
-              <MyAvatar />
-              <Box sx={{ ml: 2 }}>
-                <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
-                  {'Abdi Zamed Mohamed'}
-                </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                  {'superAdmin'}
-                </Typography>
-              </Box>
-            </AccountStyle>
-          </Link>
-        )}
       </Stack>
 
       <NavSection navConfig={sidebarConfig} isShow={!isCollapse} />
@@ -220,11 +178,13 @@ export default function DashboardSidebar({
             sx: {
               width: DRAWER_WIDTH,
               bgcolor: 'background.default',
+
               ...(isCollapse && {
                 width: COLLAPSE_WIDTH,
               }),
               ...(collapseHover && {
                 borderRight: 0,
+
                 backdropFilter: 'blur(6px)',
                 WebkitBackdropFilter: 'blur(6px)', // Fix on Mobile
                 boxShadow: (theme: any) => theme.customShadows.z20,

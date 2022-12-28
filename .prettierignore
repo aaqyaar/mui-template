@@ -1,1 +1,5 @@
 /node_modules
+build/*
+public/*
+src/setupTests.ts
+src/reportWebVitals.ts

@@ -45,6 +45,10 @@ export const PATH_ADMIN = {
     brands: path(ROOTS_ADMIN, '/brands-directory'),
     roles: path(ROOTS_ADMIN, '/roles-directory'),
     users: path(ROOTS_ADMIN, '/users-directory'),
+    settings: {
+      root: path(ROOTS_ADMIN, '/settings'),
+      general: path(ROOTS_ADMIN, '/settings/general'),
+    },
   },
   forms: {
     newCategory: path(ROOTS_ADMIN, '/new-category'),
